@@ -9,17 +9,26 @@ function LoginApp() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    const validAdmin = role === "Admin" && username === "admin" && password === "admin123";
-    const validGuard = role === "Gate Guard" && username === "guard" && password === "guard123";
+    const credentials = {
+      Admin: { user: "admin", pass: "admin123", displayName: "Admin Officer" },
+      "Gate Guard": { user: "guard", pass: "guard123", displayName: "Main Gate Security" },
+      Student: { user: "student", pass: "student123", displayName: "Akash Singh (CSE-11)" }
+    };
 
-    if (validAdmin || validGuard) {
+    const match = credentials[role];
+
+    if (match && username.trim() === match.user && password === match.pass) {
       localStorage.setItem(
         STORAGE_KEYS.USER,
-        JSON.stringify({ username, role })
+        JSON.stringify({
+          username: match.user,
+          displayName: match.displayName,
+          role
+        })
       );
       window.location.href = "dashboard.html";
     } else {
-      setError("Invalid username or password for selected role.");
+      setError(`Invalid credentials for ${role}. Check the demo box below.`);
     }
   };
 
@@ -30,8 +39,8 @@ function LoginApp() {
         <div className="login-card">
           <div className="brand-header">
             <div className="brand-badge">MAIN GATE</div>
-            <h2>Campus Visitor Portal</h2>
-            <p>Sign in to manage entry &amp; exit logs</p>
+            <h2>Campus Visitor &amp; Entry Portal</h2>
+            <p>Sign in with your assigned role</p>
           </div>
 
           {error && <div className="error-msg">{error}</div>}
@@ -39,9 +48,16 @@ function LoginApp() {
           <form onSubmit={handleLogin}>
             <div className="form-group">
               <label>Select Role</label>
-              <select value={role} onChange={(e) => setRole(e.target.value)}>
+              <select
+                value={role}
+                onChange={(e) => {
+                  setRole(e.target.value);
+                  setError("");
+                }}
+              >
                 <option value="Admin">Admin</option>
                 <option value="Gate Guard">Gate Guard</option>
+                <option value="Student">Student</option>
               </select>
             </div>
 
@@ -74,8 +90,9 @@ function LoginApp() {
 
           <div className="demo-hint">
             <strong>Demo Credentials:</strong><br />
-            Admin: <code>admin</code> / <code>admin123</code> &nbsp;|&nbsp;
-            Guard: <code>guard</code> / <code>guard123</code>
+            Admin: <code>admin</code> / <code>admin123</code><br />
+            Guard: <code>guard</code> / <code>guard123</code><br />
+            Student: <code>student</code> / <code>student123</code>
           </div>
         </div>
       </div>

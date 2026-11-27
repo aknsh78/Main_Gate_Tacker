@@ -208,3 +208,57 @@ th {
   background: var(--navy);
   color: var(--white);
 }
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-reset {
+  background: var(--white);
+  color: var(--navy);
+  border: 1px solid var(--border-grey);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-reset:hover {
+  background: var(--bg-grey);
+}
+
+.action-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-delete {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid #fecaca;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btn-delete:hover {
+  background: var(--danger);
+  color: var(--white);
+}
+.main-content {
+  min-width: 0;
+}
+
+.entry-form {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
