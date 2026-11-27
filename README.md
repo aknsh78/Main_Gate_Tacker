@@ -99,13 +99,6 @@ Main_Gate_Tacker/
 
 Change default passwords from the **Settings** tab after signing in.
 
-## Deploying on Render
-
-1. Create a new **Web Service** linked to this repository (`main` branch).
-2. Set **Build Command** to `npm install` and **Start Command** to `npm start`.
-3. Add all variables from `.env.example` under **Environment Variables** with `NODE_ENV=production`.
-4. Allow Render outbound access (or `0.0.0.0/0`) in MongoDB Atlas **Network Access**.
-
 ## Contributors
 
 - **Akansha Kukshal** — CSE-11, ABESEC Ghaziabad
