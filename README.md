@@ -2,6 +2,8 @@
 
 A campus visitor and student gate-pass management system built for **ABESEC Ghaziabad** using Node.js, Express, MongoDB, and React.
 
+**Live Deployment:** https://main-gate-tracker-v196.onrender.com
+
 ## Features
 
 - **Role-Based Access Control** — Separate views and server-enforced permissions for `Admin`, `Gate Guard`, and `Student`.
