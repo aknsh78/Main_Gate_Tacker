@@ -3,7 +3,6 @@ const STORAGE_KEYS = {
   VISITORS: "mgt_visitor_records"
 };
 
-// Starter sample data so the dashboard isn't empty on first load
 const DEFAULT_VISITORS = [
   {
     id: 101,
@@ -49,4 +48,26 @@ function saveVisitors(list) {
 
 function getCurrentTime() {
   return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
+
+function Header() {
+  return (
+    <header className="main-header">
+      <div className="header-brand">
+        <h2>Main Gate Tracker</h2>
+        <span>ABESEC Ghaziabad</span>
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="main-footer">
+      <p>Developed &amp; Maintained By: Akansha Kukshal | Akash Kumar Singh</p>
+      <p>Branch: CSE | Section: 11</p>
+      <p>Full Stack Development Team</p>
+      <p>© 2026 ABESEC Ghaziabad. All Rights Reserved.</p>
+    </footer>
+  );
 }

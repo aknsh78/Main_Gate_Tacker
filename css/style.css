@@ -24,3 +24,56 @@ body {
   background-color: var(--bg-grey);
   color: var(--text-dark);
 }
+
+/* Page Shell for Header + Content + Footer */
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-shell > .login-wrapper,
+.page-shell > .dashboard-layout {
+  flex: 1;
+  min-height: auto;
+}
+
+/* Header */
+.main-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 14px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.header-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.header-brand h2 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.header-brand span {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+/* Footer */
+.main-footer {
+  background: var(--white);
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-grey);
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.main-footer p:last-child {
+  margin-top: 4px;
+  font-size: 12px;
+}
